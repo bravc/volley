@@ -1,0 +1,13 @@
+version: '2'
+services:
+    web:
+        build:
+          context: .
+        ports:
+            - "2020:2020"
+        volumes:
+            - .:/code
+        depends_on:
+            - redis
+    redis:
+        image: redis
